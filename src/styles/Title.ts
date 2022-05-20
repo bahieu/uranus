@@ -28,7 +28,7 @@ export const Description = styled.p<StyleDescription>`
   font-weight: ${({ fontWeight }) => (fontWeight ? fontWeight : 600)};
   font-size: ${({ fontSize }) => (fontSize ? fontSize : '34px')};
   line-height: ${({ lineHeight }) => (lineHeight ? lineHeight : '34px')};
-  color: ${({ theme, color }) => (!color ? theme.text : color)};
+  color: ${({ theme, color }) => (!color ? theme.desTextColor : color)};
   margin-bottom: ${({ marginBottom }) =>
     marginBottom ? marginBottom : '0.67em'};
   margin-top: ${({ marginTop }) => (marginTop ? marginTop : '0.67em')};

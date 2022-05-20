@@ -33,7 +33,7 @@ const ImgView = styled.img`
 const ButtonOutVision = styled.span`
   cursor: pointer;
   color: ${({ theme }) => theme.text};
-  align-items: bottom;
+  align-items: center;
   font-size: 14px;
   font-weight: 500;
   &:hover {
