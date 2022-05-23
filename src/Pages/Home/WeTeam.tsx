@@ -15,7 +15,11 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: center;
+    text-align: center;
+    padding: 0;
+  }
+  .space-items {
+    margin: 0 80px;
   }
 `;
 
@@ -36,17 +40,17 @@ const WeTeam: React.FC = () => {
   return (
     <Wrapper>
       <Container>
-        <Row className="justify-content-between align-items-center ">
-          <Col xs={4}>
+        <Row className="justify-content-between space-items">
+          <Col xs={5}>
             <Title lineHeight="81px" fontSize="54px">
               We team.
             </Title>
           </Col>
         </Row>
-        <Row>
+        <Row className="justify-content-between space-items ">
           {memberList.map((v, i) => {
             return (
-              <Col key={i} className="content">
+              <Col xs={2} key={i} className="content">
                 <Circle>
                   <ImgMember src={v} />
                 </Circle>
