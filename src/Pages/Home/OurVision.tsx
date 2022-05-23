@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Row, Col, Container } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 
 import view01 from 'src/assets/imgs/views/view01.png';
 import view02 from 'src/assets/imgs/views/view02.png';
@@ -11,11 +11,13 @@ import { Title } from 'src/styles/Title';
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
+  .content {
+    margin: 123px 0 50px 140px;
+  }
 `;
 const ViewList = styled.div`
   display: grid;
   width: 100%;
-  padding-bottom: 123px;
   grid-template-columns: 1fr 1.5fr;
   .grid__item-3 {
     grid-column-start: 2;
@@ -60,22 +62,20 @@ const OurVision: React.FC = () => {
             );
           })}
         </ViewList>
-        <Container>
-          <Row className="justify-content-between align-items-center ">
-            <Col xs={5}>
-              <Title lineHeight="52px" fontSize="35px">
-                We grow businesses
-                <br />
-                by creating unified brand experiences people love.
-              </Title>
-            </Col>
-            <Col xs={2}>
-              <ButtonOutVision>
-                Our Vision <img src={next} className="img" />
-              </ButtonOutVision>
-            </Col>
-          </Row>
-        </Container>
+        <Row className="justify-content-between align-items-center content">
+          <Col xs={5}>
+            <Title lineHeight="52px" fontSize="35px">
+              We grow businesses
+              <br />
+              by creating unified brand experiences people love.
+            </Title>
+          </Col>
+          <Col xs={2}>
+            <ButtonOutVision>
+              Our Vision <img src={next} className="img" />
+            </ButtonOutVision>
+          </Col>
+        </Row>
       </div>
     </Wrapper>
   );

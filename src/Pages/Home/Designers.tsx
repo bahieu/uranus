@@ -10,7 +10,7 @@ import { Description, Title } from 'src/styles/Title';
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
-  padding: 50px 0 32px 120px;
+  margin: 0px 0 32px 140px;
 `;
 
 const ImgDsner = styled.img`
