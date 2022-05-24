@@ -2,15 +2,20 @@ import React from 'react';
 import styled from 'styled-components';
 import { Col, Row } from 'react-bootstrap';
 
-import dsner01 from 'src/assets/imgs/dsner/dsner01.png';
-import dsner02 from 'src/assets/imgs/dsner/dsner02.png';
-import dsner03 from 'src/assets/imgs/dsner/dsner03.png';
-import { Description, Title } from 'src/styles/Title';
+import { designers } from '../../data/designer';
+import { Title, Description } from 'src/styles/Title';
 
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
   margin: 0px 0 32px 140px;
+  .dsner-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .dsner-des {
+    max-width: 200px;
+  }
 `;
 
 const ImgDsner = styled.img`
@@ -20,61 +25,24 @@ const ImgDsner = styled.img`
 `;
 
 const Designer: React.FC = () => {
-  const imgDsnerList: any[] = [dsner01, dsner02, dsner03];
-
   return (
     <Wrapper>
-      <Row>
-        {imgDsnerList.map((v, i) => {
-          return (
-            <Col key={i}>
-              <ImgDsner src={v} />
-            </Col>
-          );
-        })}
-      </Row>
       <Row className="justify-content-between">
-        <Col xs={4}>
-          <Title fontSize="25px" lineHeight="38px">
-            Designer
-          </Title>
-        </Col>
-        <Col xs={4}>
-          <Title fontSize="25px" lineHeight="38px">
-            Designer
-          </Title>
-        </Col>
-        <Col xs={4}>
-          <Title fontSize="25px" lineHeight="38px">
-            Designer
-          </Title>
-        </Col>
-      </Row>
-      <Row>
-        <Col xs={4}>
-          <Description fontSize="14px" lineHeight="21px">
-            We exist to serve <br />
-            organizations that are <br />
-            making a positive social <br />
-            impact.
-          </Description>
-        </Col>
-        <Col xs={4}>
-          <Description fontSize="14px" lineHeight="21px">
-            We exist to serve <br />
-            organizations that are <br />
-            making a positive social <br />
-            impact.
-          </Description>
-        </Col>
-        <Col xs={4}>
-          <Description fontSize="14px" lineHeight="21px">
-            We exist to serve <br />
-            organizations that are <br />
-            making a positive social <br />
-            impact.
-          </Description>
-        </Col>
+        {designers.map((v, i) => (
+          <Col key={i} className="dsner-content">
+            <ImgDsner src={v.img} />
+            <Title fontSize="25px" lineHeight="38px">
+              {v.title}
+            </Title>
+            <Description
+              fontSize="14px"
+              lineHeight="21px"
+              className="dsner-des"
+            >
+              {v.description}
+            </Description>
+          </Col>
+        ))}
       </Row>
     </Wrapper>
   );
