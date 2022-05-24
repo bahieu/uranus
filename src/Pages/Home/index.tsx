@@ -5,6 +5,7 @@ import Carousel from './Carousel';
 import Welcome from './Welcome';
 import OutVision from './OurVision';
 import Designer from './Designers';
+import WeTeam from './WeTeam';
 
 export const HomePage: React.FC = () => {
   return (
@@ -13,6 +14,7 @@ export const HomePage: React.FC = () => {
       <Welcome />
       <OutVision />
       <Designer />
+      <WeTeam />
     </MainLayout>
   );
 };
