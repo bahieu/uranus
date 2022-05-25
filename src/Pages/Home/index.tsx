@@ -6,6 +6,7 @@ import Welcome from './Welcome';
 import OutVision from './OurVision';
 import Designer from './Designers';
 import WeTeam from './WeTeam';
+import Customized from './Customized';
 
 export const HomePage: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ export const HomePage: React.FC = () => {
       <OutVision />
       <Designer />
       <WeTeam />
+      <Customized />
     </MainLayout>
   );
 };
