@@ -8,6 +8,7 @@ import { Description, Title } from 'src/styles/Title';
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
+  margin-bottom: 72px;
   .content {
     display: flex;
     flex-direction: column;
