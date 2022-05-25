@@ -8,6 +8,7 @@ import { members } from '../../data/members';
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
+  margin-bottom: 117px;
   .content {
     display: flex;
     align-items: center;
