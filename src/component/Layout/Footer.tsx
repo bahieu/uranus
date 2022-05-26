@@ -35,6 +35,8 @@ const SocialList = styled.div`
   height: 20px;
   width: 20px;
   display: flex;
+  margin-left: 6%;
+  margin-bottom: 100px;
 `;
 const ImgSocial = styled.img`
   width: 100%;
@@ -42,6 +44,19 @@ const ImgSocial = styled.img`
   margin-right: 26px;
   object-fit: cover;
 `;
+
+const FooterBottom = styled.div`
+  width: 100%;
+  margin-left: 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+const FooterLink = styled.a`
+  color: #0d6efd;
+  cursor: pointer;
+`;
+
 const Footer = () => {
   const socialImgList: any[] = [fbLogo, TwitterLogo, InsLogo];
   return (
@@ -70,6 +85,17 @@ const Footer = () => {
           <ImgSocial key={i} src={v}></ImgSocial>
         ))}
       </SocialList>
+      <FooterBottom>
+        <Title fontSize="12px" lineHeight="18px">
+          <u>© 2022 Uranus</u>
+        </Title>
+        <Description fontSize="12px" lineHeight="18px">
+          Made with ☕ by{' '}
+          <FooterLink>
+            <u>Uranus</u>
+          </FooterLink>
+        </Description>
+      </FooterBottom>
     </Wrapper>
   );
 };

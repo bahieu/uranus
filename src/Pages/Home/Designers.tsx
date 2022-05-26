@@ -8,7 +8,7 @@ import { Title, Description } from 'src/styles/Title';
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
-  margin: 0px 0 32px 140px;
+  margin: 0 0 32px 140px;
   .dsner-content {
     display: flex;
     flex-direction: column;

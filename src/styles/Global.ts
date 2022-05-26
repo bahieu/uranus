@@ -10,10 +10,10 @@ ${normalize}
      padding: 0;  
     } 
     
-    body {    
-    overflow-x:hidden;   
+    body { 
     font-family: 'Poppins', sans-serif; 
     background-color: #F5F5F7;
+    margin: 0;
 }
 a {
   text-decoration: none;
