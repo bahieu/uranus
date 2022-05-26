@@ -14,19 +14,20 @@ const Wrapper = styled.div`
 `;
 const ContactUS = styled.div`
   width: 100%;
+
   display: flex;
   justify-content: space-between;
   .contact-content {
-    margin-left: 6%;
+    margin-left: 138px;
   }
   .item-align {
-    margin-left: 0;
     margin-bottom: 54px;
+    margin: 0;
   }
 `;
 
 const ContainerContact = styled.div`
-  width: 50%;
+  width: 40%;
   position: relative;
 `;
 
@@ -35,7 +36,6 @@ const SocialList = styled.div`
   height: 20px;
   width: 20px;
   display: flex;
-  margin-left: 6%;
   margin-bottom: 100px;
 `;
 const ImgSocial = styled.img`
@@ -47,7 +47,6 @@ const ImgSocial = styled.img`
 
 const FooterBottom = styled.div`
   width: 100%;
-  margin-left: 6%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -55,6 +54,11 @@ const FooterBottom = styled.div`
 const FooterLink = styled.a`
   color: #0d6efd;
   cursor: pointer;
+`;
+
+const FooterBottomContent = styled.div`
+  margin-left: 138px;
+  padding-right: 119px;
 `;
 
 const Footer = () => {
@@ -66,7 +70,7 @@ const Footer = () => {
           Contact Us
         </Title>
         <ContainerContact>
-          <Row className="justify-content-around item-align">
+          <Row className="justify-content-between item-align">
             {contactUs.map((v, i) => (
               <Col key={i} xs={5} className="item-align">
                 <Title fontSize="16px" lineHeight="24px">
@@ -80,22 +84,24 @@ const Footer = () => {
           </Row>
         </ContainerContact>
       </ContactUS>
-      <SocialList>
-        {socialImgList.map((v, i) => (
-          <ImgSocial key={i} src={v}></ImgSocial>
-        ))}
-      </SocialList>
-      <FooterBottom>
-        <Title fontSize="12px" lineHeight="18px">
-          <u>© 2022 Uranus</u>
-        </Title>
-        <Description fontSize="12px" lineHeight="18px">
-          Made with ☕ by{' '}
-          <FooterLink>
-            <u>Uranus</u>
-          </FooterLink>
-        </Description>
-      </FooterBottom>
+      <FooterBottomContent>
+        <SocialList>
+          {socialImgList.map((v, i) => (
+            <ImgSocial key={i} src={v}></ImgSocial>
+          ))}
+        </SocialList>
+        <FooterBottom>
+          <Title fontSize="12px" lineHeight="18px">
+            <u>© 2022 Uranus</u>
+          </Title>
+          <Description fontSize="12px" lineHeight="18px">
+            Made with ☕ by{' '}
+            <FooterLink>
+              <u>Uranus</u>
+            </FooterLink>
+          </Description>
+        </FooterBottom>
+      </FooterBottomContent>
     </Wrapper>
   );
 };

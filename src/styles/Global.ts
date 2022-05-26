@@ -13,7 +13,7 @@ ${normalize}
     body { 
     font-family: 'Poppins', sans-serif; 
     background-color: #F5F5F7;
-    margin: 0;
+   
 }
 a {
   text-decoration: none;
