@@ -5,7 +5,7 @@ type Navbar = {
 
 export const navbar: Navbar[] = [
   { href: '/', navItem: 'Work' },
-  { href: '/', navItem: 'Pricing' },
+  { href: '/pricing', navItem: 'Pricing' },
   { href: '/', navItem: 'Business' },
   { href: '/', navItem: 'Contact' },
   { href: '/', navItem: 'Job' },
