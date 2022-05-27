@@ -9,12 +9,12 @@ const Wrapper = styled.div`
   position: relative;
   width: 100%;
   margin-bottom: 82px;
-  /* padding-left: 140px; */
+  padding-left: 100px;
   .dsner-content {
     padding: 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    padding-left: 34px;
   }
   .dsner-des {
     max-width: 200px;
@@ -33,7 +33,7 @@ const ImgDsner = styled.img`
 const Designer: React.FC = () => {
   return (
     <Wrapper>
-      <Row className="m-0">
+      <Row className="m-0 flex-nowrap">
         {designers.map((v, i) => (
           <Col key={i} className="dsner-content">
             <ImgDsner src={v.img} />

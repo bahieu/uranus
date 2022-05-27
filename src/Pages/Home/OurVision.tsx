@@ -45,7 +45,7 @@ const ButtonOutVision = styled.span`
   .img {
     width: 16px;
     height: 16px;
-    padding-left: 8px;
+    margin-left: 8px;
   }
 `;
 
