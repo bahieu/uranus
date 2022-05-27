@@ -8,13 +8,19 @@ import { Title, Description } from 'src/styles/Title';
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
-  margin: 0 0 32px 140px;
+  margin-bottom: 82px;
+  padding-left: 100px;
   .dsner-content {
+    padding: 0;
     display: flex;
     flex-direction: column;
+    padding-left: 34px;
   }
   .dsner-des {
     max-width: 200px;
+  }
+  .dsner-container {
+    padding: 0;
   }
 `;
 
@@ -27,7 +33,7 @@ const ImgDsner = styled.img`
 const Designer: React.FC = () => {
   return (
     <Wrapper>
-      <Row className="justify-content-between">
+      <Row className="m-0 flex-nowrap">
         {designers.map((v, i) => (
           <Col key={i} className="dsner-content">
             <ImgDsner src={v.img} />

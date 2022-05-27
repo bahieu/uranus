@@ -55,7 +55,7 @@ const Carousel: React.FC = () => {
   return (
     <Wrapper>
       <Content>
-        <Container fluid>
+        <Container>
           <ContentDetail>
             <Title
               lineHeight="81px"

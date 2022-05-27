@@ -26,7 +26,7 @@ const ImgCustom = styled.img`
 
 const Customized: React.FC = () => (
   <Wrapper>
-    <Row className="justify-content-around">
+    <Row className="justify-content-around m-0">
       <Col xs={4} className="content">
         <Title lineHeight="38px" fontSize="25px">
           Make colors work for you.

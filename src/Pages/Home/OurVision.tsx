@@ -12,7 +12,8 @@ const Wrapper = styled.div`
   position: relative;
   width: 100%;
   .content {
-    margin: 123px 0 50px 140px;
+    padding: 123px 0 50px 116px;
+    margin: 0;
   }
 `;
 const ViewList = styled.div`
@@ -34,12 +35,12 @@ const ImgView = styled.img`
 
 const ButtonOutVision = styled.span`
   cursor: pointer;
-  color: ${({ theme }) => theme.text};
+  color: ${({ theme }) => theme.desTextColor};
   align-items: center;
   font-size: 14px;
   font-weight: 500;
   &:hover {
-    color: #6e6e73;
+    color: #000;
   }
   .img {
     width: 16px;
