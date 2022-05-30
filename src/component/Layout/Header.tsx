@@ -16,8 +16,9 @@ const Wrapper = styled.header`
   width: 100%;
   .navIcon-mobile {
     @media only screen and (max-width: 739px) {
-      margin-left: 33px;
-      margin-right: 103px;
+      position: absolute;
+      left: 7%;
+      transform: translateX(-10%);
     }
   }
 `;
@@ -28,6 +29,9 @@ const ImgIcon = styled.img`
   @media only screen and (max-width: 739px) {
     filter: brightness(0) invert(1);
     -webkit-filter: brightness(0) invert(1);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
   }
 `;
 

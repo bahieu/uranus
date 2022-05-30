@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   width: 100%;
   top: 0;
   background: url(${bg}) center no-repeat;
-  background-size: auto;
+  background-size: cover;
   background-position: top center;
 `;
 
@@ -19,6 +19,10 @@ const Content = styled.div`
   width: 100%;
   padding-top: 200px;
   padding-bottom: 300px;
+  @media only screen and (max-width: 739px) {
+    padding-top: 124px;
+    padding-bottom: 224px;
+  }
 `;
 
 const ContentDescription = styled.div`
@@ -26,7 +30,7 @@ const ContentDescription = styled.div`
   margin: 0 auto;
   text-align: center;
   @media only screen and (max-width: 739px) {
-    width: 295px;
+    width: 290px;
   }
   .des-mobile {
     @media only screen and (max-width: 739px) {

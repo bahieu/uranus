@@ -15,6 +15,23 @@ const Wrapper = styled.div`
   transform: translateX(-50%);
   top: -150px;
   width: 800px;
+
+  @media only screen and (max-width: 739px) {
+    width: 390px;
+    top: -200px;
+  }
+
+  .content-mobile {
+    @media only screen and (max-width: 739px) {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  .title-mobile {
+    font-size: 32px;
+    line-height: 48px;
+    text-align: center;
+  }
 `;
 
 const WebSmall = styled.div`
@@ -83,9 +100,9 @@ const Welcome: React.FC = () => {
               })}
             </PersonList>
           </WebSmall>
-          <Row className="justify-content-between align-items-center ">
+          <Row className="justify-content-between align-items-center content-mobile">
             <Col xs={2}>
-              <Title lineHeight="81px" fontSize="54px">
+              <Title lineHeight="81px" fontSize="54px" className="title-mobile">
                 Welcome Uranus.
               </Title>
             </Col>
