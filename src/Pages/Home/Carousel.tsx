@@ -11,7 +11,7 @@ const Wrapper = styled.div`
   width: 100%;
   top: 0;
   background: url(${bg}) center no-repeat;
-  background-size: 100% 100%;
+  background-size: auto;
   background-position: top center;
 `;
 
@@ -25,12 +25,30 @@ const ContentDescription = styled.div`
   width: 517px;
   margin: 0 auto;
   text-align: center;
+  @media only screen and (max-width: 739px) {
+    width: 295px;
+  }
+  .des-mobile {
+    @media only screen and (max-width: 739px) {
+      font-size: 14px;
+      line-height: 21px;
+    }
+  }
 `;
 
 const ContentDetail = styled.div`
   width: 392px;
   margin: 0 auto;
   text-align: center;
+  @media only screen and (max-width: 739px) {
+    width: 254px;
+  }
+  .title-mobile {
+    @media only screen and (max-width: 739px) {
+      font-size: 35px;
+      line-height: 52px;
+    }
+  }
 `;
 
 const ButtonViewMore = styled.span`
@@ -62,6 +80,7 @@ const Carousel: React.FC = () => {
               fontSize="54px"
               fontWeight="600"
               marginBottom="24px"
+              className="title-mobile"
             >
               Hello, we are Design Studio.
             </Title>
@@ -72,6 +91,8 @@ const Carousel: React.FC = () => {
               fontWeight="400"
               lineHeight="28px"
               marginBottom="38px"
+              color="#000"
+              className="des-mobile"
             >
               We make a meaningful difference to the world’s most loved brands.
             </Description>
