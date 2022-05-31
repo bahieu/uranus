@@ -18,7 +18,7 @@ const Wrapper = styled.div`
 
   @media only screen and (max-width: 739px) {
     width: auto;
-    top: -200px;
+    top: -190px;
   }
 
   .content-mobile {

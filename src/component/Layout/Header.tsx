@@ -14,8 +14,8 @@ const Wrapper = styled.header`
   position: absolute;
   z-index: 2;
   width: 100%;
-  .navIcon-mobile {
-    @media only screen and (max-width: 739px) {
+  @media only screen and (max-width: 739px) {
+    .navIcon-mobile {
       position: absolute;
       left: 7%;
       transform: translateX(-10%);
@@ -43,7 +43,7 @@ const StyleLink = styled(Link)`
   line-height: 21px;
   padding-left: 45px;
 
-  @media only screen and (max-width: 739px) {
+  @media only screen and (max-width: 1023px) {
     display: none;
   }
 `;
@@ -51,9 +51,22 @@ const StyleLink = styled(Link)`
 const NavbarIcon = styled.img`
   width: 24px;
   height: 17px;
+  opacity: 1;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.5;
+  }
   @media only screen and (min-width: 740px) {
     display: none;
   }
+`;
+const Overlay = styled.div`
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
 `;
 
 const Header: React.FC = () => {
@@ -64,6 +77,7 @@ const Header: React.FC = () => {
           <Col lg={2} className="p-0">
             <NavbarIcon src={navIcon} className="navIcon-mobile" />
             <ImgIcon src={icon} />
+            <Overlay />
           </Col>
           <Col lg={8}>
             <ul className="text-end">
