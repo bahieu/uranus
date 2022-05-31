@@ -14,7 +14,7 @@ const Wrapper = styled.div`
     flex-direction: column;
     justify-content: center;
   }
-  .custom-des {
+  .des-width {
     max-width: 302px;
   }
 `;
@@ -31,7 +31,7 @@ const Customized: React.FC = () => (
         <Title lineHeight="38px" fontSize="25px">
           Make colors work for you.
         </Title>
-        <Description lineHeight="21px" fontSize="14px" className="custom-des">
+        <Description lineHeight="21px" fontSize="14px" className="des-width">
           {"You're"} just a few minutes away from an endless color combination
           generator designed by you.
         </Description>

@@ -16,7 +16,7 @@ const Wrapper = styled.div`
     flex-direction: column;
     padding-left: 34px;
   }
-  .dsner-des {
+  .des-width {
     max-width: 200px;
   }
   .dsner-container {
@@ -43,7 +43,7 @@ const Designer: React.FC = () => {
             <Description
               fontSize="14px"
               lineHeight="21px"
-              className="dsner-des"
+              className="des-width"
             >
               {v.description}
             </Description>

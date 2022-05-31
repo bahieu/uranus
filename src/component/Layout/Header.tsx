@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { Col, Container, Row } from 'react-bootstrap';
 import icon from 'src/assets/imgs/header/Union.png';
 import { navbar } from '../../data/navbar';
+import navIcon from 'src/assets/imgs/header/menuIcon.png';
 
 const Wrapper = styled.header`
   background-color: transparent;
@@ -13,11 +14,25 @@ const Wrapper = styled.header`
   position: absolute;
   z-index: 2;
   width: 100%;
+  .navIcon-mobile {
+    @media only screen and (max-width: 739px) {
+      position: absolute;
+      left: 7%;
+      transform: translateX(-10%);
+    }
+  }
 `;
 
 const ImgIcon = styled.img`
   width: 100px;
   cursor: pointer;
+  @media only screen and (max-width: 739px) {
+    filter: brightness(0) invert(1);
+    -webkit-filter: brightness(0) invert(1);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 `;
 
 const StyleLink = styled(Link)`
@@ -27,6 +42,18 @@ const StyleLink = styled(Link)`
   font-size: 14px;
   line-height: 21px;
   padding-left: 45px;
+
+  @media only screen and (max-width: 739px) {
+    display: none;
+  }
+`;
+
+const NavbarIcon = styled.img`
+  width: 24px;
+  height: 17px;
+  @media only screen and (min-width: 740px) {
+    display: none;
+  }
 `;
 
 const Header: React.FC = () => {
@@ -34,7 +61,8 @@ const Header: React.FC = () => {
     <Wrapper>
       <Container>
         <Row className="justify-content-lg-between align-baseline">
-          <Col lg={2}>
+          <Col lg={2} className="p-0">
+            <NavbarIcon src={navIcon} className="navIcon-mobile" />
             <ImgIcon src={icon} />
           </Col>
           <Col lg={8}>

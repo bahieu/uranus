@@ -15,6 +15,32 @@ const Wrapper = styled.div`
   transform: translateX(-50%);
   top: -150px;
   width: 800px;
+
+  @media only screen and (max-width: 739px) {
+    width: auto;
+    top: -200px;
+  }
+
+  .content-mobile {
+    @media only screen and (max-width: 739px) {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  .title-mobile {
+    @media only screen and (max-width: 739px) {
+      font-size: 32px;
+      line-height: 48px;
+      text-align: center;
+    }
+  }
+  .des-mobile {
+    @media only screen and (max-width: 739px) {
+      text-align: center !important;
+      font-size: 18px;
+      line-height: 27px;
+    }
+  }
 `;
 
 const WebSmall = styled.div`
@@ -22,6 +48,9 @@ const WebSmall = styled.div`
   background-color: ${({ theme }) => theme.backgroundColorWebSmall};
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   margin-bottom: 60px;
+  @media only screen and (max-width: 739px) {
+    margin-bottom: 40px;
+  }
 `;
 
 const Url = styled.div`
@@ -83,9 +112,9 @@ const Welcome: React.FC = () => {
               })}
             </PersonList>
           </WebSmall>
-          <Row className="justify-content-between align-items-center ">
+          <Row className="justify-content-between align-items-center content-mobile">
             <Col xs={2}>
-              <Title lineHeight="81px" fontSize="54px">
+              <Title lineHeight="81px" fontSize="54px" className="title-mobile">
                 Welcome Uranus.
               </Title>
             </Col>
@@ -94,7 +123,7 @@ const Welcome: React.FC = () => {
                 fontSize="18px"
                 fontWeight="400"
                 lineHeight="27px"
-                className="text-end"
+                className="text-end des-mobile"
               >
                 By choosing a set of colors, {"you'll"} train a neural network
                 powered algorithm to generate colors you like and block ones you
