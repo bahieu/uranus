@@ -17,7 +17,7 @@ const Wrapper = styled.div`
   width: 800px;
 
   @media only screen and (max-width: 739px) {
-    width: 390px;
+    width: auto;
     top: -200px;
   }
 
@@ -28,9 +28,18 @@ const Wrapper = styled.div`
     }
   }
   .title-mobile {
-    font-size: 32px;
-    line-height: 48px;
-    text-align: center;
+    @media only screen and (max-width: 739px) {
+      font-size: 32px;
+      line-height: 48px;
+      text-align: center;
+    }
+  }
+  .des-mobile {
+    @media only screen and (max-width: 739px) {
+      text-align: center !important;
+      font-size: 18px;
+      line-height: 27px;
+    }
   }
 `;
 
@@ -39,6 +48,9 @@ const WebSmall = styled.div`
   background-color: ${({ theme }) => theme.backgroundColorWebSmall};
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   margin-bottom: 60px;
+  @media only screen and (max-width: 739px) {
+    margin-bottom: 40px;
+  }
 `;
 
 const Url = styled.div`
@@ -111,7 +123,7 @@ const Welcome: React.FC = () => {
                 fontSize="18px"
                 fontWeight="400"
                 lineHeight="27px"
-                className="text-end"
+                className="text-end des-mobile"
               >
                 By choosing a set of colors, {"you'll"} train a neural network
                 powered algorithm to generate colors you like and block ones you
