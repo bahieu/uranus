@@ -26,7 +26,7 @@ const Wrapper = styled.header`
 `;
 
 const ImgIcon = styled.img`
-  width: 100px;
+  width: 110px;
   cursor: pointer;
   @media ${breakpoint.mobile}, ${breakpoint.tablet} {
     filter: brightness(0) invert(1);
@@ -34,6 +34,9 @@ const ImgIcon = styled.img`
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+  }
+  @media ${breakpoint.tablet} {
+    width: 150px;
   }
 `;
 
@@ -48,14 +51,19 @@ const StyleLink = styled(Link)`
 
 const NavbarIcon = styled.label``;
 const NavbarImg = styled.img`
+  position: absolute;
   width: 24px;
   height: 17px;
+  top: 50px;
   opacity: 1;
   &:hover {
     cursor: pointer;
     opacity: 0.5;
   }
-  @media (min-width: 1024px) {
+  @media ${breakpoint.tablet} {
+    width: 30px;
+  }
+  @media ${breakpoint.pc} {
     display: none;
   }
 `;
@@ -77,12 +85,13 @@ const NavMobile = styled.div`
   .nav__link__mobile {
     font-size: 20px;
     margin-top: 40px;
-    padding: 16px 32px;
+    padding: 32px;
+    text-align: center;
     &:hover {
       background-color: #ccc;
     }
   }
-  @media (${breakpoint.mobile}), (${breakpoint.tablet}) {
+  @media ${breakpoint.pc} {
     display: none;
   }
   ${NavInput}:checked ~ && {
