@@ -112,6 +112,9 @@ const TimesIcon = styled.img`
     cursor: pointer;
   }
 `;
+const NavInput = styled.input`
+  display: none;
+`;
 
 const Header: React.FC = () => {
   return (
@@ -133,6 +136,7 @@ const Header: React.FC = () => {
               })}
             </NavPC>
             <Overlay />
+            <NavInput type="checkbox" />
             <NavMobile>
               <TimesIcon src={timesIcon} />
               {navbar.map((v, i) => {
