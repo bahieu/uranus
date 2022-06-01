@@ -7,6 +7,7 @@ import icon from 'src/assets/imgs/header/Union.png';
 import { navbar } from '../../data/navbar';
 import navIcon from 'src/assets/imgs/header/menuIcon.png';
 import timesIcon from 'src/assets/imgs/header/times.png';
+import { breakpoint } from 'src/constant/devices';
 
 const Wrapper = styled.header`
   background-color: transparent;
@@ -15,7 +16,7 @@ const Wrapper = styled.header`
   position: absolute;
   z-index: 2;
   width: 100%;
-  @media (max-width: 739px) {
+  @media ${breakpoint.mobile} {
     .navIcon-mobile {
       position: absolute;
       left: 7%;
@@ -27,7 +28,7 @@ const Wrapper = styled.header`
 const ImgIcon = styled.img`
   width: 100px;
   cursor: pointer;
-  @media (max-width: 739px) {
+  @media ${breakpoint.mobile}, ${breakpoint.tablet} {
     filter: brightness(0) invert(1);
     -webkit-filter: brightness(0) invert(1);
     position: absolute;
@@ -43,12 +44,10 @@ const StyleLink = styled(Link)`
   font-size: 14px;
   line-height: 21px;
   padding-left: 45px;
-
-  @media only screen and (max-width: 739px) {
-  }
 `;
 
-const NavbarIcon = styled.img`
+const NavbarIcon = styled.label``;
+const NavbarImg = styled.img`
   width: 24px;
   height: 17px;
   opacity: 1;
@@ -56,26 +55,14 @@ const NavbarIcon = styled.img`
     cursor: pointer;
     opacity: 0.5;
   }
-  @media (min-width: 740px) {
+  @media (min-width: 1024px) {
     display: none;
   }
 `;
-const Overlay = styled.div`
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.3);
+const NavInput = styled.input.attrs({ type: 'checkbox' })`
   display: none;
 `;
 
-const NavPC = styled.ul`
-  text-align: right;
-  @media (max-width: 740px) {
-    display: none;
-  }
-`;
 const NavMobile = styled.div`
   position: fixed;
   top: 0;
@@ -95,11 +82,35 @@ const NavMobile = styled.div`
       background-color: #ccc;
     }
   }
-  @media (min-width: 740px) {
+  @media (${breakpoint.mobile}), (${breakpoint.tablet}) {
+    display: none;
+  }
+  ${NavInput}:checked ~ && {
+    transform: translateX(0);
+  }
+`;
+const Overlay = styled.label`
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+  ${NavInput}:checked ~ && {
+    display: block;
+  }
+`;
+
+const NavPC = styled.ul`
+  text-align: right;
+  @media ${breakpoint.mobile}, ${breakpoint.tablet} {
     display: none;
   }
 `;
-const TimesIcon = styled.img`
+
+const TimesIcon = styled.label``;
+const TimesIconImg = styled.img`
   width: 24px;
   height: 24px;
   object-fit: cover;
@@ -112,9 +123,6 @@ const TimesIcon = styled.img`
     cursor: pointer;
   }
 `;
-const NavInput = styled.input`
-  display: none;
-`;
 
 const Header: React.FC = () => {
   return (
@@ -122,7 +130,9 @@ const Header: React.FC = () => {
       <Container>
         <Row className="justify-content-lg-between align-baseline">
           <Col lg={2} className="p-0">
-            <NavbarIcon src={navIcon} className="navIcon-mobile" />
+            <NavbarIcon htmlFor="nav-mb-input">
+              <NavbarImg src={navIcon} className="navIcon-mobile" />
+            </NavbarIcon>
             <ImgIcon src={icon} />
           </Col>
           <Col lg={8}>
@@ -135,10 +145,12 @@ const Header: React.FC = () => {
                 );
               })}
             </NavPC>
-            <Overlay />
-            <NavInput type="checkbox" />
+            <NavInput id="nav-mb-input" className="nav-input" />
+            <Overlay htmlFor="nav-mb-input" />
             <NavMobile>
-              <TimesIcon src={timesIcon} />
+              <TimesIcon htmlFor="nav-mb-input">
+                <TimesIconImg src={timesIcon} />
+              </TimesIcon>
               {navbar.map((v, i) => {
                 return (
                   <StyleLink to={v.href} key={i} className="nav__link__mobile">
