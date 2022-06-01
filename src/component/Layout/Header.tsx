@@ -6,6 +6,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import icon from 'src/assets/imgs/header/Union.png';
 import { navbar } from '../../data/navbar';
 import navIcon from 'src/assets/imgs/header/menuIcon.png';
+import timesIcon from 'src/assets/imgs/header/times.png';
 
 const Wrapper = styled.header`
   background-color: transparent;
@@ -14,8 +15,8 @@ const Wrapper = styled.header`
   position: absolute;
   z-index: 2;
   width: 100%;
-  .navIcon-mobile {
-    @media only screen and (max-width: 739px) {
+  @media (max-width: 739px) {
+    .navIcon-mobile {
       position: absolute;
       left: 7%;
       transform: translateX(-10%);
@@ -26,7 +27,7 @@ const Wrapper = styled.header`
 const ImgIcon = styled.img`
   width: 100px;
   cursor: pointer;
-  @media only screen and (max-width: 739px) {
+  @media (max-width: 739px) {
     filter: brightness(0) invert(1);
     -webkit-filter: brightness(0) invert(1);
     position: absolute;
@@ -44,16 +45,75 @@ const StyleLink = styled(Link)`
   padding-left: 45px;
 
   @media only screen and (max-width: 739px) {
-    display: none;
   }
 `;
 
 const NavbarIcon = styled.img`
   width: 24px;
   height: 17px;
-  @media only screen and (min-width: 740px) {
+  opacity: 1;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.5;
+  }
+  @media (min-width: 740px) {
     display: none;
   }
+`;
+const Overlay = styled.div`
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+`;
+
+const NavPC = styled.ul`
+  text-align: right;
+  @media (max-width: 740px) {
+    display: none;
+  }
+`;
+const NavMobile = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 300px;
+  max-width: 100%;
+  background-color: #e5e5e5;
+  display: flex;
+  flex-flow: column nowrap;
+  transform: translateX(-100%);
+  .nav__link__mobile {
+    font-size: 20px;
+    margin-top: 40px;
+    padding: 16px 32px;
+    &:hover {
+      background-color: #ccc;
+    }
+  }
+  @media (min-width: 740px) {
+    display: none;
+  }
+`;
+const TimesIcon = styled.img`
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+  position: absolute;
+  top: 0.4rem;
+  right: 1rem;
+  opacity: 1;
+  :hover {
+    opacity: 0.5;
+    cursor: pointer;
+  }
+`;
+const NavInput = styled.input`
+  display: none;
 `;
 
 const Header: React.FC = () => {
@@ -66,7 +126,7 @@ const Header: React.FC = () => {
             <ImgIcon src={icon} />
           </Col>
           <Col lg={8}>
-            <ul className="text-end">
+            <NavPC>
               {navbar.map((v, i) => {
                 return (
                   <StyleLink to={v.href} key={i}>
@@ -74,7 +134,19 @@ const Header: React.FC = () => {
                   </StyleLink>
                 );
               })}
-            </ul>
+            </NavPC>
+            <Overlay />
+            <NavInput type="checkbox" />
+            <NavMobile>
+              <TimesIcon src={timesIcon} />
+              {navbar.map((v, i) => {
+                return (
+                  <StyleLink to={v.href} key={i} className="nav__link__mobile">
+                    {v.navItem}
+                  </StyleLink>
+                );
+              })}
+            </NavMobile>
           </Col>
         </Row>
       </Container>

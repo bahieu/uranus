@@ -31,11 +31,11 @@ const ContentDescription = styled.div`
   text-align: center;
   @media only screen and (max-width: 739px) {
     width: 290px;
-  }
-  .des-mobile {
-    @media only screen and (max-width: 739px) {
-      font-size: 14px;
-      line-height: 21px;
+    .des-mobile {
+      @media only screen and (max-width: 739px) {
+        font-size: 14px;
+        line-height: 21px;
+      }
     }
   }
 `;
