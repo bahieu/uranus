@@ -21,25 +21,22 @@ const Wrapper = styled.div`
     top: -190px;
   }
 
-  .content-mobile {
-    @media only screen and (max-width: 739px) {
+  @media only screen and (max-width: 739px) {
+    .content-mobile {
       flex-direction: column;
       justify-content: center;
     }
   }
   .title-mobile {
-    @media only screen and (max-width: 739px) {
-      font-size: 32px;
-      line-height: 48px;
-      text-align: center;
-    }
+    font-size: 32px;
+    line-height: 48px;
+    text-align: center;
   }
+
   .des-mobile {
-    @media only screen and (max-width: 739px) {
-      text-align: center !important;
-      font-size: 18px;
-      line-height: 27px;
-    }
+    text-align: center !important;
+    font-size: 18px;
+    line-height: 27px;
   }
 `;
 
@@ -113,12 +110,12 @@ const Welcome: React.FC = () => {
             </PersonList>
           </WebSmall>
           <Row className="justify-content-between align-items-center content-mobile">
-            <Col xs={6} sm={4} md={6}>
+            <Col xs={6} sm={4} md={2}>
               <Title lineHeight="81px" fontSize="54px" className="title-mobile">
                 Welcome Uranus.
               </Title>
             </Col>
-            <Col xs={6} sm={8} md={6}>
+            <Col xs={7} sm={8} md={6}>
               <Description
                 fontSize="18px"
                 fontWeight="400"

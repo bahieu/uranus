@@ -1,11 +1,11 @@
 const size = {
-  mobile: '0px',
-  tablet: '768px',
+  mobile: '740px',
+  tablet: '1023px',
   pc: '1024px',
 };
 
-export const device = {
-  mobile: `(min-width:${size.mobile})`,
-  tablet: `(min-width:${size.tablet})`,
+export const breakpoint = {
+  mobile: `(max-width:${size.mobile})`,
+  tablet: `(min-width: 740px) and (max-width: ${size.tablet})`,
   pc: `(min-width:${size.pc})`,
 };
