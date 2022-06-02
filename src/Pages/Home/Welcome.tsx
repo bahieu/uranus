@@ -110,12 +110,12 @@ const Welcome: React.FC = () => {
             </PersonList>
           </WebSmall>
           <Row className="justify-content-between align-items-center content-mobile">
-            <Col xs={6} sm={4} md={6}>
+            <Col xs={6} sm={4} md={2}>
               <Title lineHeight="81px" fontSize="54px" className="title-mobile">
                 Welcome Uranus.
               </Title>
             </Col>
-            <Col xs={6} sm={8} md={6}>
+            <Col xs={7} sm={8} md={6}>
               <Description
                 fontSize="18px"
                 fontWeight="400"
